@@ -73,8 +73,8 @@ typedef NS_ENUM(NSUInteger, ACPMobileVisitorAuthenticationState);
  *
  * If the current SDK privacy status is \ref ADBMobilePrivacyStatusOptOut, then this operation performs no action.
  *
- * @param identifierType    a unique type to identify this customer ID
- * @param identifier        the customer ID to set
+ * @param identifierType    a unique type to identify this customer ID, should be non empty and non nil value
+ * @param identifier        the customer ID to set, should be non empty and non nil value
  * @param authenticationState a valid \ref ACPMobileVisitorAuthenticationState value.
  * @see ADBMobilePrivacyStatus
  */
@@ -95,7 +95,8 @@ typedef NS_ENUM(NSUInteger, ACPMobileVisitorAuthenticationState);
  *
  * If the current SDK privacy status is \ref ACPMobilePrivacyStatusOptOut, then this operation performs no action.
  *
- * @param identifiers a dictionary of customer IDs
+ * @param identifiers a dictionary containing identifier type as the key and identifier as the value.
+ *                    Both identifier type and identifier should be non empty and non nil values.
  * @see ADBMobilePrivacyStatus
  */
 + (void) syncIdentifiers: (nullable NSDictionary*) identifiers;
@@ -112,7 +113,8 @@ typedef NS_ENUM(NSUInteger, ACPMobileVisitorAuthenticationState);
  *
  * If the current SDK privacy status is \ref ACPMobilePrivacyStatusOptOut, then this operation performs no action.
  *
- * @param identifiers a dictionary of customer IDs
+ * @param identifiers a dictionary containing identifier type as the key and identifier as the value.
+ *                    Both identifier type and identifier should be non empty and non nil values.
  * @param authenticationState a valid \ref ACPMobileVisitorAuthenticationState value.
  * @see ADBMobilePrivacyStatus
  */
